@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Sidebar from "../partials/Sidebar";
+import Sidebar from "../partials/Sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
 
 const SidebarLayout = () => {
-    const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [sidebarOpen, setSidebarOpen] = useState(true);
     return (
         <div className="h-screen flex overflow-hiddden ml-2">
             <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
