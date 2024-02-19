@@ -142,62 +142,74 @@ const Stop = () =>{
             <div className="flex justify-end my-4 mr-3">
                 <button className="p-2 px-6 border-none rounded-lg bg-[#363F72] text-white absolute">Add Stop</button>
             </div>
+
             <section className="ml-10">
                 <div className="font-semibold">Current Stops</div>
                 <div className="border border-[#363F72] rounded-md text-[#363F72] mt-[1vw] w-[69vw] max-w-[1400px]">
-                    <div className="flex my-3 justify-between">
-                        <div className="ml-[3.5vw]">Stops</div>
-                        <div className="ml-[9vw]">Shipper #</div>
-                        <div className="mr-[4vw]">Company</div>
-                        <div className="mr-[23vw]">Address</div>
-                    </div>
-                    <div className="h-[5vw] overflow-y-scroll">
-                        <div className="flex ml-5">
-                            <div>1</div>
-                            <div className="mr-[12vw] ml-5">Pickup 1</div>
-                            <div className="mr-[3vw]">12345</div>
-                            <div className="mr-[3.5vw] ml-7">Company Name</div>
-                            <div className="mr-[3vw] ml-5">Address here, 123, NY, USA, 92112</div>
-                            <div className="flex">
-                                <img src={edit} className="mx-[.5vw]" />
-                                <img src={trash} className="mx-[.5vw]" />
+                    <div className="grid grid-cols-6 mt-3" style={{gridTemplateColumns: "5vw 16vw 7vw 14vw 15vw 5vw"}}>
+                        <div className=""></div>
+                        <div className="">Stops</div>
+                        <div>Shipper #</div>
+                        <div>Company</div>
+                        <div>Address</div>
+                        <div></div>
+
+                        <div className="mt-2 h-[5vw] w-[68.5vw] overflow-y-scroll">
+                            <div className="grid grid-cols-6 gap-x-[1vw] w-[68vw]" style={{gridTemplateColumns: "4vw 15vw 6vw 13vw 20vw 2vw"}}>
+                                <div className="pl-5">1</div>
+                                <div className="font-bold">Pickup 1</div>
+                                    <div className="font-bold">12345</div>
+                                    <div className="font-bold">Company Name</div>
+                                    <div className="font-bold">Address here, 123, NY, USA, 92112</div>
+                                    <div className="flex w-[2vw]">
+                                        <img src={edit} className="mx-[.5vw]" />
+                                        <img src={trash} className="mx-[.5vw]" />
+                                    </div>
                             </div>
+                            
+                            <div className="grid grid-cols-6 gap-x-[1vw] w-[68vw]" style={{gridTemplateColumns: "4vw 15vw 6vw 13vw 20vw 2vw"}}>
+                                <div className="pl-5">2</div>
+                                <div className="font-bold">Intermediary - Transfer</div>
+                                    <div className="font-bold">12345</div>
+                                    <div className="font-bold">Company Name</div>
+                                    <div className="font-bold">Address here, 123, NY, USA, 92112</div>
+                                    <div className="flex w-[2vw]">
+                                        <img src={edit} className="mx-[.5vw]" />
+                                        <img src={trash} className="mx-[.5vw]" />
+                                    </div>
+                            </div>
+
+                            <div className="grid grid-cols-6 gap-x-[1vw] w-[68vw]" style={{gridTemplateColumns: "4vw 15vw 6vw 13vw 20vw 2vw"}}>
+                                <div className="pl-5">3</div>
+                                <div className="font-bold">Intermediary - Phyto</div>
+                                    <div className="font-bold">12345</div>
+                                    <div className="font-bold">Company Name</div>
+                                    <div className="font-bold">Address here, 123, NY, USA, 92112</div>
+                                    <div className="flex w-[2vw]">
+                                        <img src={edit} className="mx-[.5vw]" />
+                                        <img src={trash} className="mx-[.5vw]" />
+                                    </div>
+                            </div>
+
+                            <div className="grid grid-cols-6 gap-x-[1vw] w-[68vw]" style={{gridTemplateColumns: "4vw 15vw 6vw 13vw 20vw 2vw"}}>
+                                <div className="pl-5">4</div>
+                                <div className="font-bold">Delivery</div>
+                                    <div className="font-bold">12345</div>
+                                    <div className="font-bold">Company Name</div>
+                                    <div className="font-bold">Address here, 123, NY, USA, 92112</div>
+                                    <div className="flex w-[2vw]">
+                                        <img src={edit} className="mx-[.5vw]" />
+                                        <img src={trash} className="mx-[.5vw]" />
+                                    </div>
+                            </div>
+                        
                         </div>
-                        <div className="flex ml-5">
-                            <div>2</div>
-                            <div className="mr-[4vw] ml-5">Intermediary - Transfer</div>
-                            <div className="mr-[3vw] ml-2">12345</div>
-                            <div className="mr-[3.5vw] ml-7">Company Name</div>
-                            <div className="mr-[3vw] ml-5">Address here, 123, NY, USA, 92112</div>
-                            <div className="flex">
-                                <img src={edit} className="mx-[.5vw]" />
-                                <img src={trash} className="mx-[.5vw]" />
-                            </div>
-                        </div><div className="flex ml-5">
-                            <div>3</div>
-                            <div className="mr-[5.7vw] ml-5">Intermediary - Phyto</div>
-                            <div className="mr-[3vw]">12345</div>
-                            <div className="mr-[3.5vw] ml-7">Company Name</div>
-                            <div className="mr-[3vw] ml-5">Address here, 123, NY, USA, 92112</div>
-                            <div className="flex">
-                                <img src={edit} className="mx-[.5vw]" />
-                                <img src={trash} className="mx-[.5vw]" />
-                            </div>
-                        </div><div className="flex ml-5">
-                            <div>4</div>
-                            <div className="mr-[12vw] ml-6">Delivery</div>
-                            <div className="mr-[3vw]">12345</div>
-                            <div className="mr-[3.5vw] ml-7">Company Name</div>
-                            <div className="mr-[3vw] ml-5">Address here, 123, NY, USA, 92112</div>
-                            <div className="flex">
-                                <img src={edit} className="mx-[.5vw]" />
-                                <img src={trash} className="mx-[.5vw]" />
-                            </div>
-                        </div>
+                        
                     </div>
-                    
+                        
                 </div>
             </section>
+
         </div>
     )
 }
