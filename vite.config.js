@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import postcss from "./postcss.config.cjs";
 import react from "@vitejs/plugin-react";
-import mkcert from "vite-plugin-mkcert";
+// import mkcert from "vite-plugin-mkcert";
 import svgr from "vite-plugin-svgr";
 
 // https://vitejs.dev/config/
@@ -12,9 +12,9 @@ export default defineConfig({
   css: {
     postcss,
   },
-  plugins: [svgr(), react(), mkcert()],
+  plugins: [svgr(), react()],
   server: {
-    https: true,
+    // https: true,
     port: "5173",
   },
   resolve: {
