@@ -33,14 +33,14 @@ const Stop = () =>{
                                     <label for="SNumber">
                                         <div className="mb-2">Shipper Number</div>
                                         <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-24 rounded-xl mb-2"
+                                            className="border py-2 pl-2 pr-24 rounded-xl mb-2"
                                             id="SNumber" type="text" placeholder="Type Here" maxlength="20" required />
                                     </label>
 
                                     <label for="Company Name">
                                         <div className="mb-2">Company Name</div>
                                         <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-14 rounded-xl mb-2"
+                                            className="border py-2 pl-2 pr-14 rounded-xl mb-2"
                                             id="CName" type="text" placeholder="Type Here" maxlength="20" required />
                                         <button className="border border-[#363F72] bg-[#F0E7FF] rounded-lg p-[.3vw] mx-2"><img src={SearchB} alt="" /></button>
                                     </label>
@@ -48,21 +48,21 @@ const Stop = () =>{
                                     <label for="CFN">
                                         <div className="mb-2">Contact Full Name</div>
                                         <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-24 rounded-xl mb-2"
+                                            className="border py-2 pl-2 pr-24 rounded-xl mb-2"
                                             id="CFN" type="text" placeholder="Type Here" maxlength="20" required />
                                     </label>
 
                                     <label for="Address">
                                         <div className="mb-2">Address</div>
                                         <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-24 rounded-xl mb-2"
+                                            className="border py-2 pl-2 pr-24 rounded-xl mb-2"
                                             id="Address" type="text" placeholder="Type Here" maxlength="20" required />
                                     </label>
 
                                     <label for="City">
                                         <div className="mb-2">City</div>
                                         <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-24 rounded-xl mb-2"
+                                            className="border py-2 pl-2 pr-24 rounded-xl mb-2"
                                             id="City" type="text" placeholder="Type Here" maxlength="20" required />
                                     </label>
 
@@ -70,14 +70,14 @@ const Stop = () =>{
                                         <label  for="State">
                                             <div   className="mb-2">State</div>
                                             <input
-                                                className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-2 w-[9vw] rounded-xl mb-2"
+                                                className="border py-2 pl-2 pr-2 w-[9vw] rounded-xl mb-2"
                                                 id="State" type="text" placeholder="Type Here" maxlength="20" required />
                                         </label>
 
                                         <label for="ZipCode" className=" mx-8">
                                             <div className="mb-2">Zip Code</div>
                                             <input
-                                                className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-2 w-[9vw] rounded-xl mb-2"
+                                                className="border py-2 pl-2 pr-2 w-[9vw] rounded-xl mb-2"
                                                 id="ZipCode" type="text" placeholder="Type Here" maxlength="20" required />
                                         </label>
                                     </div>
@@ -87,13 +87,13 @@ const Stop = () =>{
                                     <label for="HoP">
                                         <div className="mb-2">Hours of Operation</div>
                                         <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-24 rounded-xl mb-2"
+                                            className="border py-2 pl-2 pr-24 rounded-xl mb-2"
                                             id="HoP" type="text" placeholder="Type Here" maxlength="20" required />
                                         <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-24 rounded-xl mb-2"
+                                            className="border py-2 pl-2 pr-24 rounded-xl mb-2"
                                             id="HoP" type="text" placeholder="Type Here" maxlength="20" required />
                                         <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-24 rounded-xl mb-2"
+                                            className="border py-2 pl-2 pr-24 rounded-xl mb-2"
                                             id="HoP" type="text" placeholder="Type Here" maxlength="20" required />
                                     </label>
                                     
@@ -101,14 +101,14 @@ const Stop = () =>{
                                         <label for="Date">
                                             <div className="mb-2">Date</div>
                                             <input
-                                                className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-4 rounded-xl mb-2 mr-2"
+                                                className="border py-2 pl-2 pr-4 rounded-xl mb-2 mr-2"
                                                 id="Date" type="date" placeholder="DD-MM-YYYY" required />
                                         </label>
 
                                         <label for="Time">
                                             <div className="mb-2">Time</div>
                                             <input
-                                                className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-9 rounded-xl mb-2"
+                                                className="border py-2 pl-2 pr-9 rounded-xl mb-2"
                                                 id="Time" type="time" placeholder="Type Here" maxlength="20" required />
                                         </label>
                                     </div>
@@ -116,20 +116,20 @@ const Stop = () =>{
                                     <label for="Fault">
                                         <div className="mb-2">Fault</div>
                                         <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-2 w-[11vw] rounded-xl mb-2"
+                                            className="border py-2 pl-2 pr-2 w-[11vw] rounded-xl mb-2"
                                             id="Fault" type="text" maxlength="20" required />
                                     </label>
 
                                     <label for="Reason">
                                         <div className="mb-2">Reason</div>
                                         <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-24 rounded-xl mb-2"
+                                            className="border py-2 pl-2 pr-24 rounded-xl mb-2"
                                             id="Reason" type="text" placeholder="Type Here" maxlength="20" required />
                                     </label>
                                     <label for="Pickup">
                                         <div className="mb-2">Pickup #</div>
                                         <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-24 rounded-xl mb-2"
+                                            className="border py-2 pl-2 pr-24 rounded-xl mb-2"
                                             id="Pickup" type="text" placeholder="Type Here" maxlength="20" required />
                                     </label>
                                 </div>

@@ -22,120 +22,74 @@ const AssignCarrier = () =>{
                         </div>
                 </section>
             
-                <section className="text-[#363F72] mx-3 ml-14 mt-[2.5vw] w-[50vw] max-w-[1400px]">
+                <section className="text-[#363F72] mr-3 ml-14 mt-[2.5vw] w-[50vw] max-w-[1400px]">
                     <div className="p-4">
                         <div className="flex justify-between text-black">
                             <div className="font-semibold">Available Stops</div>
-                            <div className="font-semibold">Selected Stops</div>
+                            <div className="font-semibold mr-[14vw]">Selected Stops</div>
                         </div>
                         <div>
-                            <form className="grid grid-cols-2 gap-2 p-3" action="" id="form_input">
+                            <div className="grid grid-cols-3 gap-1 pt-6" style={{gridTemplateColumns: "20vw 5vw 20vw"}} id="form_input">
                                 <div>
-                                    <label for="SNumber">
-                                        <div className="mb-2">Shipper Number</div>
-                                        <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-24 rounded-xl mb-2"
-                                            id="SNumber" type="text" placeholder="Type Here" maxlength="20" required />
-                                    </label>
+                                    <input
+                                        className="border border-[#363F72] py-2 pl-2 pr-[4vw] rounded-xl mb-2"
+                                        id="SNumber" type="text" placeholder="P1: Name Here" maxlength="20" required />
 
-                                    <label for="Company Name">
-                                        <div className="mb-2">Company Name</div>
-                                        <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-14 rounded-xl mb-2"
-                                            id="CName" type="text" placeholder="Type Here" maxlength="20" required />
-                                        <button className="border border-[#363F72] bg-[#F0E7FF] rounded-lg p-[.3vw] mx-2"><img src={SearchB} alt="" /></button>
-                                    </label>
+                                    <input
+                                        className="border py-2 pl-2 pr-[4vw] rounded-xl mb-2"
+                                        id="SNumber" type="text" placeholder="P2: Name Here" maxlength="20" required />
 
-                                    <label for="CFN">
-                                        <div className="mb-2">Contact Full Name</div>
-                                        <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-24 rounded-xl mb-2"
-                                            id="CFN" type="text" placeholder="Type Here" maxlength="20" required />
-                                    </label>
+                                    <input
+                                        className="border py-2 pl-2 pr-[4vw] rounded-xl mb-2"
+                                        id="SNumber" type="text" placeholder="I1: Name Here" maxlength="20" required />
 
-                                    <label for="Address">
-                                        <div className="mb-2">Address</div>
-                                        <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-24 rounded-xl mb-2"
-                                            id="Address" type="text" placeholder="Type Here" maxlength="20" required />
-                                    </label>
+                                    <input
+                                        className="border py-2 pl-2 pr-[4vw] rounded-xl mb-2"
+                                        id="SNumber" type="text" placeholder="I2: Name Here" maxlength="20" required />
 
-                                    <label for="City">
-                                        <div className="mb-2">City</div>
-                                        <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-24 rounded-xl mb-2"
-                                            id="City" type="text" placeholder="Type Here" maxlength="20" required />
-                                    </label>
+                                    <input
+                                        className="border py-2 pl-2 pr-[4vw] rounded-xl mb-2"
+                                        id="SNumber" type="text" placeholder="I3: Name Here" maxlength="20" required />
 
-                                    <div className="flex">
-                                        <label  for="State">
-                                            <div   className="mb-2">State</div>
-                                            <input
-                                                className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-2 w-[9vw] rounded-xl mb-2"
-                                                id="State" type="text" placeholder="Type Here" maxlength="20" required />
-                                        </label>
+                                    <input
+                                        className="border py-2 pl-2 pr-[4vw] rounded-xl mb-2"
+                                        id="SNumber" type="text" placeholder="I4: Name Here" maxlength="20" required />
 
-                                        <label for="ZipCode" className=" mx-8">
-                                            <div className="mb-2">Zip Code</div>
-                                            <input
-                                                className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-2 w-[9vw] rounded-xl mb-2"
-                                                id="ZipCode" type="text" placeholder="Type Here" maxlength="20" required />
-                                        </label>
+                                    <input
+                                        className="border py-2 pl-2 pr-[4vw] rounded-xl mb-2"
+                                        id="SNumber" type="text" placeholder="I5: Name Here" maxlength="20" required />
+
+                                    <input
+                                        className="border py-2 pl-2 pr-[4vw] rounded-xl mb-2"
+                                        id="SNumber" type="text" placeholder="D1: Name Here" maxlength="20" required />    
+                                </div>
+
+                                <div className="w-[2.5vw] mx-auto my-auto">
+                                    <div className="border border-none bg-[#363F72] p-[1vw] mb-[4vw] rounded-lg">
+                                        <button className="p-[3px] border-[#6C739F] border-solid border-r-[2px] border-b-[2px] flex" 
+                                        style={{transform: "rotate(-45deg)", webkitTransform: "rotate(-45deg)"}}></button>
+                                    </div>
+                                    <div className="border border-none bg-[#363F72] p-[1vw] rounded-lg">
+                                        <button className="p-[3px] border-[#6C739F] border-solid border-r-[2px] border-b-[2px] flex" 
+                                        style={{transform: "rotate(135deg)", webkitTransform: "rotate(135deg)"}}></button>
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label for="HoP">
-                                        <div className="mb-2">Hours of Operation</div>
-                                        <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-24 rounded-xl mb-2"
-                                            id="HoP" type="text" placeholder="Type Here" maxlength="20" required />
-                                        <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-24 rounded-xl mb-2"
-                                            id="HoP" type="text" placeholder="Type Here" maxlength="20" required />
-                                        <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-24 rounded-xl mb-2"
-                                            id="HoP" type="text" placeholder="Type Here" maxlength="20" required />
-                                    </label>
-                                    
-                                    <div className="flex">
-                                        <label for="Date">
-                                            <div className="mb-2">Date</div>
-                                            <input
-                                                className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-4 rounded-xl mb-2 mr-2"
-                                                id="Date" type="date" placeholder="DD-MM-YYYY" required />
-                                        </label>
+                                    <input
+                                        className="border border-[#363F72] py-2 pl-2 pr-[4vw] rounded-xl mb-2"
+                                        id="SNumber" type="text" placeholder="P1: Name Here" maxlength="20" required />
 
-                                        <label for="Time">
-                                            <div className="mb-2">Time</div>
-                                            <input
-                                                className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-9 rounded-xl mb-2"
-                                                id="Time" type="time" placeholder="Type Here" maxlength="20" required />
-                                        </label>
-                                    </div>
-                                    
-                                    <label for="Fault">
-                                        <div className="mb-2">Fault</div>
-                                        <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-2 w-[11vw] rounded-xl mb-2"
-                                            id="Fault" type="text" maxlength="20" required />
-                                    </label>
+                                    <input
+                                        className="border border-[#363F72] py-2 pl-2 pr-[4vw] rounded-xl mb-2"
+                                        id="SNumber" type="text" placeholder="I3: Name Here" maxlength="20" required />
 
-                                    <label for="Reason">
-                                        <div className="mb-2">Reason</div>
-                                        <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-24 rounded-xl mb-2"
-                                            id="Reason" type="text" placeholder="Type Here" maxlength="20" required />
-                                    </label>
-                                    <label for="Pickup">
-                                        <div className="mb-2">Pickup #</div>
-                                        <input
-                                            className=" outline-1 ring-1 ring-gray-300 outline-green-500 py-2 pl-2 pr-24 rounded-xl mb-2"
-                                            id="Pickup" type="text" placeholder="Type Here" maxlength="20" required />
-                                    </label>
+                                    <input
+                                        className="border border-[#363F72] py-2 pl-2 pr-[4vw] rounded-xl mb-2"
+                                        id="SNumber" type="text" placeholder="D1: Name Here" maxlength="20" required />
                                 </div>
 
-                            </form>
+                            </div>
                         </div>
                     </div> 
                 </section>
@@ -144,57 +98,39 @@ const AssignCarrier = () =>{
             <section className="ml-10">
                 <div className="font-semibold">Current Stops</div>
                 <div className="border border-[#363F72] rounded-md text-[#363F72] mt-[1vw] w-[69vw] max-w-[1400px]">
-                    <div className="flex my-3 justify-between">
-                        <div className="ml-[3.5vw]">Stops</div>
-                        <div className="ml-[9vw]">Shipper #</div>
-                        <div className="mr-[4vw]">Company</div>
-                        <div className="mr-[23vw]">Address</div>
-                    </div>
-                    <div className="h-[5vw] overflow-y-scroll">
-                        <div className="flex ml-5">
-                            <div>1</div>
-                            <div className="mr-[12vw] ml-5">Pickup 1</div>
-                            <div className="mr-[3vw]">12345</div>
-                            <div className="mr-[3.5vw] ml-7">Company Name</div>
-                            <div className="mr-[3vw] ml-5">Address here, 123, NY, USA, 92112</div>
-                            <div className="flex">
-                                <img src={edit} className="mx-[.5vw]" />
-                                <img src={trash} className="mx-[.5vw]" />
+                    <div className="grid grid-cols-4 mt-3" style={{gridTemplateColumns: "7vw 16vw 38.5vw 5vw"}}>
+                        <div className="pl-5">No.</div>
+                        <div className="">Carrier</div>
+                        <div>Stops</div>
+                        <div>Update</div>
+
+                        <div className="mt-2 h-[5vw] w-[68.5vw] overflow-y-scroll">
+                            <div className="grid grid-cols-4 gap-x-[1vw] w-[68vw]" style={{gridTemplateColumns: "6vw 15vw 37vw 2vw"}}>
+                                <div className="pl-5">1</div>
+                                <div className="font-bold">Carrier Name</div>
+                                <div className="font-bold">P1: Name Here ~ D1: Name Here ~ I3: Name Here</div>
+                                <div className="flex w-[2vw]">
+                                    <img src={edit} className="mx-[.5vw]" />
+                                    <img src={trash} className="mx-[.5vw]" />
+                                </div>
                             </div>
+                            
+                            <div className="mt-2 h-[5vw] w-[68.5vw] overflow-y-scroll">
+                                <div className="grid grid-cols-4 gap-x-[1vw] w-[68vw]" style={{gridTemplateColumns: "6vw 15vw 37vw 2vw"}}>
+                                    <div className="pl-5">1</div>
+                                    <div className="font-bold">Carrier Name</div>
+                                    <div className="font-bold">I3: Name Here ~ D2: Name Here</div>
+                                    <div className="flex w-[2vw]">
+                                        <img src={edit} className="mx-[.5vw]" />
+                                        <img src={trash} className="mx-[.5vw]" />
+                                    </div>
+                                </div>
+                            </div>
+                        
                         </div>
-                        <div className="flex ml-5">
-                            <div>2</div>
-                            <div className="mr-[4vw] ml-5">Intermediary - Transfer</div>
-                            <div className="mr-[3vw] ml-2">12345</div>
-                            <div className="mr-[3.5vw] ml-7">Company Name</div>
-                            <div className="mr-[3vw] ml-5">Address here, 123, NY, USA, 92112</div>
-                            <div className="flex">
-                                <img src={edit} className="mx-[.5vw]" />
-                                <img src={trash} className="mx-[.5vw]" />
-                            </div>
-                        </div><div className="flex ml-5">
-                            <div>3</div>
-                            <div className="mr-[5.7vw] ml-5">Intermediary - Phyto</div>
-                            <div className="mr-[3vw]">12345</div>
-                            <div className="mr-[3.5vw] ml-7">Company Name</div>
-                            <div className="mr-[3vw] ml-5">Address here, 123, NY, USA, 92112</div>
-                            <div className="flex">
-                                <img src={edit} className="mx-[.5vw]" />
-                                <img src={trash} className="mx-[.5vw]" />
-                            </div>
-                        </div><div className="flex ml-5">
-                            <div>4</div>
-                            <div className="mr-[12vw] ml-6">Delivery</div>
-                            <div className="mr-[3vw]">12345</div>
-                            <div className="mr-[3.5vw] ml-7">Company Name</div>
-                            <div className="mr-[3vw] ml-5">Address here, 123, NY, USA, 92112</div>
-                            <div className="flex">
-                                <img src={edit} className="mx-[.5vw]" />
-                                <img src={trash} className="mx-[.5vw]" />
-                            </div>
-                        </div>
+                        
                     </div>
-                    
+                        
                 </div>
             </section>
         </div>
