@@ -1,11 +1,14 @@
+import React, { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
+import "./css/style.css";
+import SidebarLayout from "./layouts/SidebarLayout";
 
-import { useLocation, useRoutes } from 'react-router-dom'
-import { ROUTES } from './routes'
-import { useEffect } from 'react';
+// Import pages
+import AssignCarrier from "./pages/AssignCarrier";
+import StopPage from "./pages/Stop";
 
 function App() {
-  const routes = useRoutes(ROUTES);
   const location = useLocation();
 
   useEffect(() => {
@@ -16,9 +19,14 @@ function App() {
 
   return (
     <>
-      {routes}
+      <Routes>
+        <Route path="/" element={<SidebarLayout />}>
+          <Route exact path="/assign-carrier" element={<AssignCarrier />} />
+          <Route exact path="/manage-stops" element={<StopPage />} />
+        </Route>
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
