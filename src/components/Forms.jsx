@@ -5,20 +5,22 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import FormControl from "@mui/material/FormControl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import dayjs from "dayjs";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CustomTextField } from "./CustomTextField";
 import SearchModal from "../partials/header/SearchModal";
+import { DataContext } from "../context/DataContext";
 // Appointment By, Appointment Required
 // Product Description
 // Temperature
 // Special Instruction
 
-export const PickupForm = ({ data, setData }) => {
+export const PickupForm = ({ }) => {
+  const {data, updateData} = useContext(DataContext);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [dateTimeOpen, setDateTimeOpen] = useState(false);
 
   const setOperation = (incoming) => {
-    setData({ ...data, companyName: incoming });
+    updateData({ ...data, companyName: incoming });
   };
   return (
     <React.Fragment>
@@ -41,7 +43,7 @@ export const PickupForm = ({ data, setData }) => {
               placeholder="Type Here"
               value={data.shipperNumber}
               onChange={(e) =>
-                setData({ ...data, shipperNumber: e.target.value })
+                updateData({ ...data, shipperNumber: e.target.value })
               }
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
               type="text"
@@ -56,7 +58,7 @@ export const PickupForm = ({ data, setData }) => {
               <input
                 value={data.companyName}
                 onChange={(e) =>
-                  setData({ ...data, companyName: e.target.value })
+                  updateData({ ...data, companyName: e.target.value })
                 }
                 placeholder="Type Here"
                 className="-mt-2 rounded-lg w-full  placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -84,7 +86,7 @@ export const PickupForm = ({ data, setData }) => {
             <input
               value={data.contactFullName}
               onChange={(e) =>
-                setData({ ...data, contactFullName: e.target.value })
+                updateData({ ...data, contactFullName: e.target.value })
               }
               placeholder="WEST-59"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -98,7 +100,7 @@ export const PickupForm = ({ data, setData }) => {
             </label>
             <input
               value={data.address}
-              onChange={(e) => setData({ ...data, address: e.target.value })}
+              onChange={(e) => updateData({ ...data, address: e.target.value })}
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
               type="text"
@@ -111,7 +113,7 @@ export const PickupForm = ({ data, setData }) => {
             </label>
             <input
               value={data.city}
-              onChange={(e) => setData({ ...data, city: e.target.value })}
+              onChange={(e) => updateData({ ...data, city: e.target.value })}
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
               type="text"
@@ -125,7 +127,7 @@ export const PickupForm = ({ data, setData }) => {
               </label>
               <input
                 value={data.state}
-                onChange={(e) => setData({ ...data, state: e.target.value })}
+                onChange={(e) => updateData({ ...data, state: e.target.value })}
                 placeholder="Type Here"
                 className="-mt-2 rounded-lg w-full placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
                 type="text"
@@ -139,7 +141,7 @@ export const PickupForm = ({ data, setData }) => {
               <input
                 placeholder="Type Here"
                 value={data.zipCode}
-                onChange={(e) => setData({ ...data, zipCode: e.target.value })}
+                onChange={(e) => updateData({ ...data, zipCode: e.target.value })}
                 className="-mt-2 rounded-lg w-full placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
                 type="text"
                 id="shipperNumber"
@@ -152,7 +154,7 @@ export const PickupForm = ({ data, setData }) => {
             </label>
             <input
               value={data.fault}
-              onChange={(e) => setData({ ...data, fault: e.target.value })}
+              onChange={(e) => updateData({ ...data, fault: e.target.value })}
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
               type="text"
@@ -165,7 +167,7 @@ export const PickupForm = ({ data, setData }) => {
             </label>
             <input
               value={data.reason}
-              onChange={(e) => setData({ ...data, reason: e.target.value })}
+              onChange={(e) => updateData({ ...data, reason: e.target.value })}
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
               type="text"
@@ -178,7 +180,7 @@ export const PickupForm = ({ data, setData }) => {
             </label>
             <input
               value={data.pickup}
-              onChange={(e) => setData({ ...data, fault: e.target.value })}
+              onChange={(e) => updateData({ ...data, fault: e.target.value })}
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
               type="text"
@@ -195,7 +197,7 @@ export const PickupForm = ({ data, setData }) => {
             <input
               value={data.hourOfOperation1}
               onChange={(e) =>
-                setData({ ...data, hourOfOperation1: e.target.value })
+                updateData({ ...data, hourOfOperation1: e.target.value })
               }
               placeholder="Type Here"
               className=" rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -205,7 +207,7 @@ export const PickupForm = ({ data, setData }) => {
             <input
               value={data.hourOfOperation2}
               onChange={(e) =>
-                setData({ ...data, hourOfOperation2: e.target.value })
+                updateData({ ...data, hourOfOperation2: e.target.value })
               }
               placeholder="Type Here"
               className=" rounded-lg mt-4 placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -215,7 +217,7 @@ export const PickupForm = ({ data, setData }) => {
             <input
               value={data.hourOfOperation3}
               onChange={(e) =>
-                setData({ ...data, hourOfOperation3: e.target.value })
+                updateData({ ...data, hourOfOperation3: e.target.value })
               }
               placeholder="Type Here"
               className=" rounded-lg mt-4 placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -231,7 +233,7 @@ export const PickupForm = ({ data, setData }) => {
             <input
               value={data.appointmentBy}
               onChange={(e) =>
-                setData({ ...data, appointmentBy: e.target.value })
+                updateData({ ...data, appointmentBy: e.target.value })
               }
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -246,7 +248,7 @@ export const PickupForm = ({ data, setData }) => {
             <input
               value={data.appointmentRequired}
               onChange={(e) =>
-                setData({ ...data, appointmentRequired: e.target.value })
+                updateData({ ...data, appointmentRequired: e.target.value })
               }
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -261,7 +263,7 @@ export const PickupForm = ({ data, setData }) => {
             <input
               value={data.productDescription}
               onChange={(e) =>
-                setData({ ...data, productDescription: e.target.value })
+                updateData({ ...data, productDescription: e.target.value })
               }
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -276,7 +278,7 @@ export const PickupForm = ({ data, setData }) => {
             <input
               value={data.temperature}
               onChange={(e) =>
-                setData({ ...data, temperature: e.target.value })
+                updateData({ ...data, temperature: e.target.value })
               }
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -291,7 +293,7 @@ export const PickupForm = ({ data, setData }) => {
             <input
               value={data.specialInstruction}
               onChange={(e) =>
-                setData({ ...data, specialInstruction: e.target.value })
+                updateData({ ...data, specialInstruction: e.target.value })
               }
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -318,7 +320,7 @@ export const PickupForm = ({ data, setData }) => {
                   onClose={() => setDateTimeOpen(false)}
                   value={data.pickupDateTime}
                   onChange={(newValue) => {
-                    setData({ ...data, pickupDateTime: newValue });
+                    updateData({ ...data, pickupDateTime: newValue });
                   }}
                 />
               </FormControl>
@@ -330,11 +332,12 @@ export const PickupForm = ({ data, setData }) => {
   );
 };
 
-export const DeliveryForm = ({ data, setData }) => {
+export const DeliveryForm = ({ }) => {
+  const {data, updateData} = useContext(DataContext);
   const [dateTimeOpen, setDateTimeOpen] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const setOperation = (incoming) => {
-    setData({ ...data, companyName: incoming });
+    updateData({ ...data, companyName: incoming });
   };
   return (
     <React.Fragment>
@@ -356,7 +359,7 @@ export const DeliveryForm = ({ data, setData }) => {
               placeholder="Type Here"
               value={data.shipperNumber}
               onChange={(e) =>
-                setData({ ...data, shipperNumber: e.target.value })
+                updateData({ ...data, shipperNumber: e.target.value })
               }
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
               type="text"
@@ -371,7 +374,7 @@ export const DeliveryForm = ({ data, setData }) => {
               <input
                 value={data.companyName}
                 onChange={(e) =>
-                  setData({ ...data, companyName: e.target.value })
+                  updateData({ ...data, companyName: e.target.value })
                 }
                 placeholder="Type Here"
                 className="-mt-2 rounded-lg w-full  placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -399,7 +402,7 @@ export const DeliveryForm = ({ data, setData }) => {
             <input
               value={data.contactFullName}
               onChange={(e) =>
-                setData({ ...data, contactFullName: e.target.value })
+                updateData({ ...data, contactFullName: e.target.value })
               }
               placeholder="WEST-59"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -413,7 +416,7 @@ export const DeliveryForm = ({ data, setData }) => {
             </label>
             <input
               value={data.address}
-              onChange={(e) => setData({ ...data, address: e.target.value })}
+              onChange={(e) => updateData({ ...data, address: e.target.value })}
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
               type="text"
@@ -426,7 +429,7 @@ export const DeliveryForm = ({ data, setData }) => {
             </label>
             <input
               value={data.city}
-              onChange={(e) => setData({ ...data, city: e.target.value })}
+              onChange={(e) => updateData({ ...data, city: e.target.value })}
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
               type="text"
@@ -440,7 +443,7 @@ export const DeliveryForm = ({ data, setData }) => {
               </label>
               <input
                 value={data.state}
-                onChange={(e) => setData({ ...data, state: e.target.value })}
+                onChange={(e) => updateData({ ...data, state: e.target.value })}
                 placeholder="Type Here"
                 className="-mt-2 rounded-lg w-full placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
                 type="text"
@@ -454,7 +457,7 @@ export const DeliveryForm = ({ data, setData }) => {
               <input
                 placeholder="Type Here"
                 value={data.zipCode}
-                onChange={(e) => setData({ ...data, zipCode: e.target.value })}
+                onChange={(e) => updateData({ ...data, zipCode: e.target.value })}
                 className="-mt-2 rounded-lg w-full placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
                 type="text"
                 id="shipperNumber"
@@ -471,7 +474,7 @@ export const DeliveryForm = ({ data, setData }) => {
             <input
               value={data.hourOfOperation1}
               onChange={(e) =>
-                setData({ ...data, hourOfOperation1: e.target.value })
+                updateData({ ...data, hourOfOperation1: e.target.value })
               }
               placeholder="Type Here"
               className=" rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -481,7 +484,7 @@ export const DeliveryForm = ({ data, setData }) => {
             <input
               value={data.hourOfOperation2}
               onChange={(e) =>
-                setData({ ...data, hourOfOperation2: e.target.value })
+                updateData({ ...data, hourOfOperation2: e.target.value })
               }
               placeholder="Type Here"
               className=" rounded-lg mt-4 placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -491,7 +494,7 @@ export const DeliveryForm = ({ data, setData }) => {
             <input
               value={data.hourOfOperation3}
               onChange={(e) =>
-                setData({ ...data, hourOfOperation3: e.target.value })
+                updateData({ ...data, hourOfOperation3: e.target.value })
               }
               placeholder="Type Here"
               className=" rounded-lg mt-4 placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -518,7 +521,7 @@ export const DeliveryForm = ({ data, setData }) => {
                   onClose={() => setDateTimeOpen(false)}
                   value={data.pickupDateTime}
                   onChange={(newValue) => {
-                    setData({ ...data, pickupDateTime: newValue });
+                    updateData({ ...data, pickupDateTime: newValue });
                   }}
                 />
               </FormControl>
@@ -530,7 +533,7 @@ export const DeliveryForm = ({ data, setData }) => {
             </label>
             <input
               value={data.fault}
-              onChange={(e) => setData({ ...data, fault: e.target.value })}
+              onChange={(e) => updateData({ ...data, fault: e.target.value })}
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
               type="text"
@@ -543,7 +546,7 @@ export const DeliveryForm = ({ data, setData }) => {
             </label>
             <input
               value={data.reason}
-              onChange={(e) => setData({ ...data, reason: e.target.value })}
+              onChange={(e) => updateData({ ...data, reason: e.target.value })}
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
               type="text"
@@ -556,7 +559,7 @@ export const DeliveryForm = ({ data, setData }) => {
             </label>
             <input
               value={data.pickup}
-              onChange={(e) => setData({ ...data, fault: e.target.value })}
+              onChange={(e) => updateData({ ...data, fault: e.target.value })}
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
               type="text"
@@ -569,12 +572,13 @@ export const DeliveryForm = ({ data, setData }) => {
   );
 };
 
-export const IntermediaryForm = ({ data, setData }) => {
+export const IntermediaryForm = ({  }) => {
+  const {data, updateData} = useContext(DataContext);
   const [dateTimeOpen, setDateTimeOpen] = useState(false);
   const [departureDateTimeOpen, setDepartureDateTimeOpen] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const setOperation = (incoming) => {
-    setData({ ...data, companyName: incoming });
+    updateData({ ...data, companyName: incoming });
   };
 
   return (
@@ -598,7 +602,7 @@ export const IntermediaryForm = ({ data, setData }) => {
               placeholder="Type Here"
               value={data.shipperNumber}
               onChange={(e) =>
-                setData({ ...data, shipperNumber: e.target.value })
+                updateData({ ...data, shipperNumber: e.target.value })
               }
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
               type="text"
@@ -613,7 +617,7 @@ export const IntermediaryForm = ({ data, setData }) => {
               <input
                 value={data.companyName}
                 onChange={(e) =>
-                  setData({ ...data, companyName: e.target.value })
+                  updateData({ ...data, companyName: e.target.value })
                 }
                 placeholder="Type Here"
                 className="-mt-2 rounded-lg w-full  placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -636,7 +640,7 @@ export const IntermediaryForm = ({ data, setData }) => {
             <input
               value={data.contactFullName}
               onChange={(e) =>
-                setData({ ...data, contactFullName: e.target.value })
+                updateData({ ...data, contactFullName: e.target.value })
               }
               placeholder="WEST-59"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -650,7 +654,7 @@ export const IntermediaryForm = ({ data, setData }) => {
             </label>
             <input
               value={data.address}
-              onChange={(e) => setData({ ...data, address: e.target.value })}
+              onChange={(e) => updateData({ ...data, address: e.target.value })}
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
               type="text"
@@ -663,7 +667,7 @@ export const IntermediaryForm = ({ data, setData }) => {
             </label>
             <input
               value={data.city}
-              onChange={(e) => setData({ ...data, city: e.target.value })}
+              onChange={(e) => updateData({ ...data, city: e.target.value })}
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
               type="text"
@@ -677,7 +681,7 @@ export const IntermediaryForm = ({ data, setData }) => {
               </label>
               <input
                 value={data.state}
-                onChange={(e) => setData({ ...data, state: e.target.value })}
+                onChange={(e) => updateData({ ...data, state: e.target.value })}
                 placeholder="Type Here"
                 className="-mt-2 rounded-lg w-full placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
                 type="text"
@@ -691,7 +695,7 @@ export const IntermediaryForm = ({ data, setData }) => {
               <input
                 placeholder="Type Here"
                 value={data.zipCode}
-                onChange={(e) => setData({ ...data, zipCode: e.target.value })}
+                onChange={(e) => updateData({ ...data, zipCode: e.target.value })}
                 className="-mt-2 rounded-lg w-full placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
                 type="text"
                 id="shipperNumber"
@@ -706,7 +710,7 @@ export const IntermediaryForm = ({ data, setData }) => {
             <input
               value={data.arrivalInstruction}
               onChange={(e) =>
-                setData({ ...data, arrivalInstruction: e.target.value })
+                updateData({ ...data, arrivalInstruction: e.target.value })
               }
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -721,7 +725,7 @@ export const IntermediaryForm = ({ data, setData }) => {
             <input
               value={data.departureInstruction}
               onChange={(e) =>
-                setData({ ...data, departureInstruction: e.target.value })
+                updateData({ ...data, departureInstruction: e.target.value })
               }
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -736,7 +740,7 @@ export const IntermediaryForm = ({ data, setData }) => {
             </label>
             <input
               value={data.refNumber}
-              onChange={(e) => setData({ ...data, refNumber: e.target.value })}
+              onChange={(e) => updateData({ ...data, refNumber: e.target.value })}
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
               type="text"
@@ -753,7 +757,7 @@ export const IntermediaryForm = ({ data, setData }) => {
             <input
               value={data.hourOfOperation1}
               onChange={(e) =>
-                setData({ ...data, hourOfOperation1: e.target.value })
+                updateData({ ...data, hourOfOperation1: e.target.value })
               }
               placeholder="Type Here"
               className=" rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -763,7 +767,7 @@ export const IntermediaryForm = ({ data, setData }) => {
             <input
               value={data.hourOfOperation2}
               onChange={(e) =>
-                setData({ ...data, hourOfOperation2: e.target.value })
+                updateData({ ...data, hourOfOperation2: e.target.value })
               }
               placeholder="Type Here"
               className=" rounded-lg mt-4 placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -773,7 +777,7 @@ export const IntermediaryForm = ({ data, setData }) => {
             <input
               value={data.hourOfOperation3}
               onChange={(e) =>
-                setData({ ...data, hourOfOperation3: e.target.value })
+                updateData({ ...data, hourOfOperation3: e.target.value })
               }
               placeholder="Type Here"
               className=" rounded-lg mt-4 placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -788,7 +792,7 @@ export const IntermediaryForm = ({ data, setData }) => {
             </label>
             <input
               value={data.phone}
-              onChange={(e) => setData({ ...data, phone: e.target.value })}
+              onChange={(e) => updateData({ ...data, phone: e.target.value })}
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
               type="text"
@@ -801,7 +805,7 @@ export const IntermediaryForm = ({ data, setData }) => {
             </label>
             <input
               value={data.fax}
-              onChange={(e) => setData({ ...data, fax: e.target.value })}
+              onChange={(e) => updateData({ ...data, fax: e.target.value })}
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
               type="text"
@@ -815,7 +819,7 @@ export const IntermediaryForm = ({ data, setData }) => {
             <input
               value={data.paymentTerms}
               onChange={(e) =>
-                setData({ ...data, paymentTerms: e.target.value })
+                updateData({ ...data, paymentTerms: e.target.value })
               }
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -830,7 +834,7 @@ export const IntermediaryForm = ({ data, setData }) => {
             <input
               value={data.specialInstruction}
               onChange={(e) =>
-                setData({ ...data, specialInstruction: e.target.value })
+                updateData({ ...data, specialInstruction: e.target.value })
               }
               placeholder="Type Here"
               className="-mt-2 rounded-lg placeholder:text-[#363F7299]/[0.6] focus:border-[#363F72]  border-[#363F7266]/[0.4]"
@@ -858,7 +862,7 @@ export const IntermediaryForm = ({ data, setData }) => {
                   onClose={() => setDateTimeOpen(false)}
                   value={data.arrivalDateTime}
                   onChange={(newValue) => {
-                    setData({ ...data, arrivalDateTime: newValue });
+                    updateData({ ...data, arrivalDateTime: newValue });
                   }}
                 />
               </FormControl>
@@ -883,7 +887,7 @@ export const IntermediaryForm = ({ data, setData }) => {
                   onClose={() => setDepartureDateTimeOpen(false)}
                   value={data.departureDateTime}
                   onChange={(newValue) => {
-                    setData({ ...data, departureDateTime: newValue });
+                    updateData({ ...data, departureDateTime: newValue });
                   }}
                 />
               </FormControl>

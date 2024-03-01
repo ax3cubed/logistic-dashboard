@@ -12,29 +12,46 @@ import {
   faAnglesLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { classNames } from "../utils/Utils";
+import { currentStops } from "../data/data";
 //initial value set for Arrow
 const upArrow = -1;
 const downArrow = 1;
 
 
 const TransferList = ({ props }) => {
+
+  const [stops, setStops] = useState(currentStops);
   //calling props
   const [propsVal, setStatePropsFun] = useState(props);
-  //setting states with callings props and updating new values
+
   useEffect(() => {
-    axios
-      .get("./data.json")
-      .then((response) => {
-        setStatePropsFun({
-          list1: response.data.itemList1,
-          list2: response.data.itemList2,
-        });
-      })
-      .catch(() => {
-        // handle error
-        console.log("Error Loading data");
-      });
-  }, []);
+    setStatePropsFun({
+      list1: currentStops.map(stops => {
+        return {
+          ...stops,
+          text: stops.company,
+          checked: false
+        }
+      }),
+      list2: []
+    })
+  }, [])
+
+  //setting states with callings props and updating new values
+  // useEffect(() => {
+  //   axios
+  //     .get("./data.json")
+  //     .then((response) => {
+  //       setStatePropsFun({
+  //         list1: response.data.itemList1,
+  //         list2: response.data.itemList2,
+  //       });
+  //     })
+  //     .catch(() => {
+  //       // handle error
+  //       console.log("Error Loading data");
+  //     });
+  // }, []);
 
   //Handeling Array to set value to checkbox from false to true
   const handleChange = (e) => {

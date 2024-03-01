@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { currentStops, stopTypes } from "../data/data";
 import { areEqual, categorize, classNames } from "../utils/Utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,12 +10,13 @@ import {
   IntermediaryForm,
   PickupForm,
 } from "../components/Forms";
+import { DataContext } from "../context/DataContext";
+import { randomNumberBetween } from "@mui/x-data-grid/utils/utils";
 
-const ChooseStopTypes = ({ selectedProptype, setSelectedProptype, setData }) => {
-  const handleSelect = (types) =>{
-    setData({});
+
+const ChooseStopTypes = ({ selectedProptype, setSelectedProptype }) => {
+  const handleSelect = (types) => {
     setSelectedProptype(types);
-
   }
 
   return (
@@ -27,7 +28,7 @@ const ChooseStopTypes = ({ selectedProptype, setSelectedProptype, setData }) => 
           {stopTypes.map((types) => (
             <div key={types.id} className="flex">
               <button
-                onClick={() =>handleSelect(types) }
+                onClick={() => handleSelect(types)}
                 className={classNames(
                   selectedProptype.id === types.id
                     ? "text-[#363F72] font-black bg-[#F9F5FFB2]/[0.7] border-[#363F72]"
@@ -45,9 +46,9 @@ const ChooseStopTypes = ({ selectedProptype, setSelectedProptype, setData }) => 
   );
 };
 
-const FormContainer = ({ selectedProptype, data, setData }) => {
-  
+const FormContainer = ({ selectedProptype }) => {
 
+  const { data, setData } = useContext(DataContext);
   return (
     <React.Fragment>
       <div className="grid grid-rows-2 col-span-2 mr-4">
@@ -61,8 +62,6 @@ const FormContainer = ({ selectedProptype, data, setData }) => {
           >
             <FormFactory
               stopType={selectedProptype}
-              data={data}
-              setData={setData}
             />
           </div>
         </div>
@@ -77,20 +76,20 @@ const FormContainer = ({ selectedProptype, data, setData }) => {
   );
 };
 
-function FormFactory({ stopType, data, setData }) {
+function FormFactory({ stopType }) {
   const compareValue = categorize(stopType.name);
   switch (compareValue) {
     case "pickup":
-      return <PickupForm data={data} setData={setData} />;
+      return <PickupForm />;
 
     case "intermediary":
-      return <IntermediaryForm data={data} setData={setData} />;
+      return <IntermediaryForm />;
 
     case "delivery":
-      return <DeliveryForm data={data} setData={setData} />;
+      return <DeliveryForm />;
 
     default:
-      return <PickUpForm data={data} setData={setData} />;
+      return <PickUpForm />;
   }
 }
 const StopPage = () => {
@@ -129,8 +128,11 @@ const StopPage = () => {
       ),
     },
   ];
+
+
   const [selectedProptype, setSelectedProptype] = useState(stopTypes[0]);
-  const [data, setData] = useState({});
+  const { data, setData } = useContext(DataContext);
+
   return (
     <>
       <main className="border-solid border-[#101828] rounded-3xl m-1 border">
@@ -145,20 +147,21 @@ const StopPage = () => {
               <ChooseStopTypes
                 selectedProptype={selectedProptype}
                 setSelectedProptype={setSelectedProptype}
-                setData= {setData}
+
               />
               <FormContainer
                 selectedProptype={selectedProptype}
-                data={data}
-                setData={setData}
+
+
               ></FormContainer>
             </div>
             <div className="place-self-center w-11/12 h-72 m-5 xxs:m-0 xxs:ml-3 xxs:mb-8 -mt-96 mb-16">
               <div className="text-black font-semibold mb-3">Current Stops</div>
               <CustomDataGrid
+                getRowId={randomNumberBetween(23,6,20000) }
                 checkboxSelection
                 className="rounded-3xl border-2 h-80"
-                rows={currentStops}
+                rows={data}
                 columns={columns}
                 components={{ Pagination: CustomPagination }}
               />
