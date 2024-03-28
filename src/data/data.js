@@ -68,16 +68,17 @@ export const rows = [
 export const currentStops = [
   {
     id: 1,
-    stops: "Pickup",
-    shipper: "Shipper Name",
-    company: "Company 1",
+    stopType: "Pickup",
+    shipperNumber: "Shipper Number",
+    companyName: "Company 1",
     address: "Address here, 123, NY, USA, 92112",
+
   },
   {
     id: 2,
-    stops: "Intermediary - Transfer",
-    shipper: "Shipper Name",
-    company: "Company 2",
+    stopType: "Intermediary - Transfer",
+    shipperNumber: "Shipper Number",
+    companyName: "Company 2",
     address: "Address here, 123, NY, USA, 92112",
   },
 ];

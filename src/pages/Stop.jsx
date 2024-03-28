@@ -15,7 +15,9 @@ import { randomNumberBetween } from "@mui/x-data-grid/utils/utils";
 
 
 const ChooseStopTypes = ({ selectedProptype, setSelectedProptype }) => {
+ 
   const handleSelect = (types) => {
+
     setSelectedProptype(types);
   }
 
@@ -48,7 +50,7 @@ const ChooseStopTypes = ({ selectedProptype, setSelectedProptype }) => {
 
 const FormContainer = ({ selectedProptype }) => {
 
-  const { data, setData } = useContext(DataContext);
+  const {  dataArray,dataObject, updateData, setDataObject, deleteData} = useContext(DataContext);
   return (
     <React.Fragment>
       <div className="grid grid-rows-2 col-span-2 mr-4">
@@ -67,7 +69,7 @@ const FormContainer = ({ selectedProptype }) => {
         </div>
 
         <div className="mt-3">
-          <button onClick={() => console.log(data)} className="btn w-1/6 xxs:w-full rounded-lg float-right bg-[#363F72] text-center text-white hover:bg-[#272d52]">
+          <button onClick={() => updateData(dataObject)} className="btn w-1/6 xxs:w-full rounded-lg float-right bg-[#363F72] text-center text-white hover:bg-[#272d52]">
             <span className=" block text-xs">Add Stop</span>
           </button>
         </div>
@@ -93,12 +95,13 @@ function FormFactory({ stopType }) {
   }
 }
 const StopPage = () => {
+  const {  dataArray,dataObject, updateData, setDataObject, deleteData} = useContext(DataContext);
   const columns = [
     { field: "id", headerName: "", width: 20 },
-    { field: "stops", headerName: "Stops", width: 100 },
-    { field: "shipper", headerName: "Shipper #", width: 100 },
-    { field: "company", headerName: "Company", width: 200 },
-    { field: "address", headerName: "Address", width: 300 },
+    { field: "stopType", headerName: "Stops", width: 100, editable:true },
+    { field: "shipperNumber", headerName: "Shipper #", width: 100, editable:true },
+    { field: "companyName", headerName: "Company", width: 200 , editable:true},
+    { field: "address", headerName: "Address", width: 300,editable:true },
     {
       field: "update",
       editable: false,
@@ -116,7 +119,9 @@ const StopPage = () => {
                 icon={faEdit}
               ></FontAwesomeIcon>
             </IconButton>
-            <IconButton>
+            <IconButton onClick={() => {
+              deleteData(row)
+            }}>
               <FontAwesomeIcon
                 className="text-[#363F72]"
                 size="xs"
@@ -127,11 +132,15 @@ const StopPage = () => {
         </>
       ),
     },
+ 
   ];
 
 
   const [selectedProptype, setSelectedProptype] = useState(stopTypes[0]);
-  const { data, setData } = useContext(DataContext);
+  const handleSelectStoptype = (data) =>{
+    setSelectedProptype(data);
+    setDataObject({...dataObject, stopType:data.name})
+  }
 
   return (
     <>
@@ -146,7 +155,7 @@ const StopPage = () => {
               {/* Choose Selected StopType */}
               <ChooseStopTypes
                 selectedProptype={selectedProptype}
-                setSelectedProptype={setSelectedProptype}
+                setSelectedProptype={handleSelectStoptype}
 
               />
               <FormContainer
@@ -160,8 +169,9 @@ const StopPage = () => {
               <CustomDataGrid
                 getRowId={randomNumberBetween(23,6,20000) }
                 checkboxSelection
+                editMode="cell"
                 className="rounded-3xl border-2 h-80"
-                rows={data}
+                rows={dataArray}
                 columns={columns}
                 components={{ Pagination: CustomPagination }}
               />
