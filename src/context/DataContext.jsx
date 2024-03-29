@@ -11,6 +11,13 @@ export const ContextProvider = ({ children }) => {
 
     const updateData = (data) => {
         console.log(data);
+        var sorted = dataArray.sort((a, b) => b.id - a.id);
+        console.log(sorted);
+        var last = sorted[0].id;
+        console.log(last);
+        var newId =  last + 1;
+        console.log(newId);
+        data.id = newId;
         setDataArray(prevData => [...prevData, data])
     }
     const deleteData = (data) => {
@@ -23,7 +30,7 @@ export const ContextProvider = ({ children }) => {
             if (obj.id == id) {
                 return data
             }
-            else{
+            else {
                 return obj;
             }
         }))

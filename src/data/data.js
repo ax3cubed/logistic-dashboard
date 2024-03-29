@@ -72,7 +72,6 @@ export const currentStops = [
     shipperNumber: "Shipper Number",
     companyName: "Company 1",
     address: "Address here, 123, NY, USA, 92112",
-
   },
   {
     id: 2,
